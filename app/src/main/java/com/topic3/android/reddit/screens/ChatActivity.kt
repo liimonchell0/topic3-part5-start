@@ -20,6 +20,7 @@ import com.topic3.android.reddit.databinding.ActivityChatBinding
 import java.util.*
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.height
+import androidx.compose.material.MaterialTheme
 
 
 class ChatActivity : AppCompatActivity() {
@@ -36,8 +37,11 @@ class ChatActivity : AppCompatActivity() {
             finish()
         }
 
-        binding.button.setOnClickListener {
-            showToast()
+        binding.composeButton.setContent {
+            MaterialTheme {
+                ComposeButton { showToast() }
+
+            }
         }
     }
 
